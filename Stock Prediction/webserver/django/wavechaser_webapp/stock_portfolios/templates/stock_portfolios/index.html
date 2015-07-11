@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'stock_portfolios/style.css' %}" />
+
+{% if symbol_list %}
+    <ul>
+    {% for symbol in symbol_list %}
+        <li><a href="{% url 'stock_portfolios:portfolio' symbol.id %}">{{ symbol.symbol }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No symbols are available.</p>
+{% endif %}

@@ -1,0 +1,12 @@
+<h1>{{ symbol.symbol }}</h1>
+<h2>IPO date: {{ symbol.IPO_date }}</h2>
+<h2>full name: {{ symbol.full_name }}</h2>
+<h2>description: {{ symbol.description }}</h2>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<p>date, portfolio.min_price, portfolio.max_price, open_price, close_price, trade_volume, dividend</p>
+{% for portfolio in symbol.portfolio_set.all %}
+    <p>{{ portfolio.date }}, {{ portfolio.min_price }}, {{ portfolio.max_price }}, {{ portfolio.open_price }},{{ portfolio.close_price }}, {{ portfolio.trade_volume }}, {{ portfolio.dividend }}
+    </p>
+{% endfor %}

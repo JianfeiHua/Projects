@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<html ng-app="waveChaserApp">
+
+<base href="/">
+<link rel="stylesheet" type="text/css" href="{% static 'ng_playground/css/style.css' %}" />
+<script src="{% static 'ng_playground/js/angular.js' %}"></script>
+<script src="{% static 'ng_playground/js/angular-route.js' %}"></script>
+<script src="{% static 'ng_playground/js/app.js' %}"></script>
+<script src="{% static 'ng_playground/js/controllers.js' %}"></script>
+
+<!--Define the div container as an Angular app module-->
+<div>
+	<!--Placeholder for the templates-->
+	<div ng-view></div>
+</div>
